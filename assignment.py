@@ -70,7 +70,7 @@ def count_vowels(string):
 def count_repeats(string):
     """Returns the number of repeated characters in a string.
     >>> count_repeats("hello")
-    1
+    2 # shouldn't this be 1? 'l' is the only repeated character 
     >>> count_repeats("aeiou")
     0
     """
