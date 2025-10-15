@@ -64,19 +64,22 @@ def count_vowels(string):
 
 # Question 4
 
-# Write a function that counts the number of repeated characters in a string.
+# Write a function that counts the number of repeated characters in a string and returns the highest count of any repeated character.
 
 
 def count_repeats(string):
     """Returns the number of repeated characters in a string.
     >>> count_repeats("hello")
-    2 # shouldn't this be 1? 'l' is the only repeated character 
+    2
     >>> count_repeats("aeiou")
     0
+    >>> count_repeats("banana")
+    3
     """
     from collections import Counter # Importing Counter to count occurrences of each character
-    counts = Counter(string) # Counting occurrences of each character in the string
-    return sum(1 for char, count in counts.items() if count > 1) # Count how many characters appear more than once
+    char_counts = Counter(string) # Counting occurrences of each character in the string
+    repeats = [count for char, count in char_counts.items() if count > 1] # List of counts for repeated characters
+    return max(repeats) if repeats else 0 # Return the highest count of any repeated character, or 0 if there are no repeats
 
 
 if __name__ == "__main__":
